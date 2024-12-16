@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      /* background-image: url("./img.jpeg"); */
+    }
+    
+    form {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      background: url(./img.jpeg);
+    }
+    .header {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #efef13;
+    }
+    .input.field {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .input.field label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #555;
+    }
+    .input.field input {
+      width: calc(90% - 10px);
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      align-content: center;
+    }
+    button {
+      width: 60%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      align-items: center;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+    .message a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .message a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <form id="form2" class="Registration-form">
+    <h2 class="header"> Register </h2>
+    <div class="input field">
+      <input type="text" id="first-name" placeholder="First Name" required>
+    </div>
+    <div class="input field">
+      <input type="text" id="last-name" placeholder="Last Name" required>
+    </div>
+    <div class="input field">
+      <input type="email" id="email" placeholder="Email-ID" required>
+    </div>
+    <div class="input field">
+      <input type="password" id="password" placeholder="Password" required>
+    </div>
+    <div class="input field">
+      <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+    </div>
+    <button type="submit"> Register </button>
+    <p class="message" style="color: white;"> Already have an account? <a href="/login.html"> Login </a></p>
+  </form>
+</body>
+</html>

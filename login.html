@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <form id="form1">
+      <h2 class="header">Login</h2>
+      <div class="input-field">
+        <input type="text" id="user-id" placeholder="User ID" required><br><br>
+        <input type="password" id="password" placeholder="Password" required><br><br>
+      <div class="captcha-code" id="captcha">ABC123</div>
+        <input type="text" id="captchaInput" placeholder="Enter Captcha" required>
+      </div>
+      <div class="captcha-buttons">
+        <button type="button" onclick="validateCaptcha()">Submit</button>
+        <button type="button" onclick="generateCaptcha()">Refresh</button>
+      </div>
+      <div id="result" class="result"></div>
+      <p class="message" style="color: white;">Don't have an account? <a href="register.html">Register</a></p>
+    </form>
+  </div>
+
+  <script>
+    function generateCaptcha() {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let captcha = '';
+      for (let i = 0; i < 6; i++) {
+        captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      document.getElementById('captcha').textContent = captcha;
+      document.getElementById('result').textContent = '';
+      document.getElementById('captchaInput').value = '';
+    }
+    function validateCaptcha() {
+      const enteredCaptcha = document.getElementById('captchaInput').value;
+      const actualCaptcha = document.getElementById('captcha').textContent;
+      const resultElement = document.getElementById('result');
+      if (enteredCaptcha === actualCaptcha) {
+        resultElement.textContent = 'CAPTCHA validated successfully!';
+        resultElement.style.color = 'green';
+      } else {
+        resultElement.textContent = 'Invalid CAPTCHA. Please try again.';
+        resultElement.style.color = 'red';
+      }
+    }
+    // Generate CAPTCHA on page load
+    window.onload = generateCaptcha;
+  </script>
+</body>
+</html>
